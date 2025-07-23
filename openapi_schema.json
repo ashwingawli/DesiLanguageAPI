@@ -1,0 +1,664 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "DesiLanguage API",
+        "description": "Language Learning Lesson Generator",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Read Root",
+                "operationId": "read_root__get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generate-desi-lesson": {
+            "post": {
+                "summary": "Generate Desi Lesson",
+                "operationId": "generate_desi_lesson_generate_desi_lesson_post",
+                "parameters": [
+                    {
+                        "name": "save_to_db",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": true,
+                            "title": "Save To Db"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DesiLessonRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DesiLessonResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/desi-lesson-topics": {
+            "get": {
+                "summary": "Get Desi Lesson Topics",
+                "operationId": "get_desi_lesson_topics_desi_lesson_topics_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array",
+                                    "title": "Response Get Desi Lesson Topics Desi Lesson Topics Get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/desi-lessons-with-themes": {
+            "get": {
+                "summary": "Get Desi Lessons With Themes",
+                "description": "Get all lesson titles and themes from Lessons_n_themes.txt",
+                "operationId": "get_desi_lessons_with_themes_desi_lessons_with_themes_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/random-desi-topic": {
+            "get": {
+                "summary": "Get Random Desi Topic",
+                "operationId": "get_random_desi_topic_random_desi_topic_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generate-random-desi-lesson": {
+            "post": {
+                "summary": "Generate Random Desi Lesson",
+                "operationId": "generate_random_desi_lesson_generate_random_desi_lesson_post",
+                "parameters": [
+                    {
+                        "name": "target_language",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Target Language"
+                        }
+                    },
+                    {
+                        "name": "save_to_db",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": true,
+                            "title": "Save To Db"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DesiLessonResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/desi-lessons": {
+            "get": {
+                "summary": "Get Desi Lessons",
+                "operationId": "get_desi_lessons_desi_lessons_get",
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0,
+                            "title": "Skip"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 100,
+                            "title": "Limit"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/DesiLessonDB"
+                                    },
+                                    "title": "Response Get Desi Lessons Desi Lessons Get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/desi-lessons/{lesson_id}": {
+            "get": {
+                "summary": "Get Desi Lesson",
+                "operationId": "get_desi_lesson_desi_lessons__lesson_id__get",
+                "parameters": [
+                    {
+                        "name": "lesson_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "title": "Lesson Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/desi-lessons/language/{target_language}": {
+            "get": {
+                "summary": "Get Desi Lessons By Language",
+                "operationId": "get_desi_lessons_by_language_desi_lessons_language__target_language__get",
+                "parameters": [
+                    {
+                        "name": "target_language",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Target Language"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/DesiLessonDB"
+                                    },
+                                    "title": "Response Get Desi Lessons By Language Desi Lessons Language  Target Language  Get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/get-or-generate-desi-lesson": {
+            "get": {
+                "summary": "Get Or Generate Desi Lesson",
+                "description": "First tries to find an existing lesson in the database.\nIf not found, generates a new lesson and saves it to the database.",
+                "operationId": "get_or_generate_desi_lesson_get_or_generate_desi_lesson_get",
+                "parameters": [
+                    {
+                        "name": "target_language",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Target Language"
+                        }
+                    },
+                    {
+                        "name": "lesson_topic",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Lesson Topic"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DesiLessonResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "DesiDialogueItem": {
+                "properties": {
+                    "speaker": {
+                        "type": "string",
+                        "title": "Speaker"
+                    },
+                    "target_language_script": {
+                        "type": "string",
+                        "title": "Target Language Script"
+                    },
+                    "transliteration": {
+                        "type": "string",
+                        "title": "Transliteration"
+                    },
+                    "english": {
+                        "type": "string",
+                        "title": "English"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "speaker",
+                    "target_language_script",
+                    "transliteration",
+                    "english"
+                ],
+                "title": "DesiDialogueItem"
+            },
+            "DesiExampleSentence": {
+                "properties": {
+                    "english": {
+                        "type": "string",
+                        "title": "English"
+                    },
+                    "target_language_script": {
+                        "type": "string",
+                        "title": "Target Language Script"
+                    },
+                    "transliteration": {
+                        "type": "string",
+                        "title": "Transliteration"
+                    },
+                    "pronunciation": {
+                        "type": "string",
+                        "title": "Pronunciation"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "english",
+                    "target_language_script",
+                    "transliteration",
+                    "pronunciation"
+                ],
+                "title": "DesiExampleSentence"
+            },
+            "DesiLessonContent": {
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "title": "Title"
+                    },
+                    "target_language": {
+                        "type": "string",
+                        "title": "Target Language"
+                    },
+                    "theme": {
+                        "type": "string",
+                        "title": "Theme"
+                    },
+                    "vocabulary": {
+                        "items": {
+                            "$ref": "#/components/schemas/DesiVocabularyItem"
+                        },
+                        "type": "array",
+                        "title": "Vocabulary"
+                    },
+                    "example_sentences": {
+                        "items": {
+                            "$ref": "#/components/schemas/DesiExampleSentence"
+                        },
+                        "type": "array",
+                        "title": "Example Sentences"
+                    },
+                    "short_story": {
+                        "$ref": "#/components/schemas/DesiShortStory"
+                    },
+                    "quiz": {
+                        "items": {
+                            "$ref": "#/components/schemas/DesiQuizQuestion"
+                        },
+                        "type": "array",
+                        "title": "Quiz"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "title",
+                    "target_language",
+                    "theme",
+                    "vocabulary",
+                    "example_sentences",
+                    "short_story",
+                    "quiz"
+                ],
+                "title": "DesiLessonContent"
+            },
+            "DesiLessonDB": {
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "title": "Id"
+                    },
+                    "title": {
+                        "type": "string",
+                        "title": "Title"
+                    },
+                    "target_language": {
+                        "type": "string",
+                        "title": "Target Language"
+                    },
+                    "theme": {
+                        "type": "string",
+                        "title": "Theme"
+                    },
+                    "lesson_number": {
+                        "type": "integer",
+                        "title": "Lesson Number"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Created At"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "title",
+                    "target_language",
+                    "theme",
+                    "lesson_number",
+                    "created_at"
+                ],
+                "title": "DesiLessonDB"
+            },
+            "DesiLessonRequest": {
+                "properties": {
+                    "target_language": {
+                        "type": "string",
+                        "title": "Target Language"
+                    },
+                    "lesson_topic": {
+                        "type": "string",
+                        "title": "Lesson Topic"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "target_language",
+                    "lesson_topic"
+                ],
+                "title": "DesiLessonRequest"
+            },
+            "DesiLessonResponse": {
+                "properties": {
+                    "desi_lesson": {
+                        "$ref": "#/components/schemas/DesiLessonContent"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "desi_lesson"
+                ],
+                "title": "DesiLessonResponse"
+            },
+            "DesiQuizQuestion": {
+                "properties": {
+                    "question": {
+                        "type": "string",
+                        "title": "Question"
+                    },
+                    "options": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "title": "Options"
+                    },
+                    "answer": {
+                        "type": "string",
+                        "title": "Answer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "question",
+                    "options",
+                    "answer"
+                ],
+                "title": "DesiQuizQuestion"
+            },
+            "DesiShortStory": {
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "title": "Title"
+                    },
+                    "dialogue": {
+                        "items": {
+                            "$ref": "#/components/schemas/DesiDialogueItem"
+                        },
+                        "type": "array",
+                        "title": "Dialogue"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "title",
+                    "dialogue"
+                ],
+                "title": "DesiShortStory"
+            },
+            "DesiVocabularyItem": {
+                "properties": {
+                    "english": {
+                        "type": "string",
+                        "title": "English"
+                    },
+                    "target_language_script": {
+                        "type": "string",
+                        "title": "Target Language Script"
+                    },
+                    "transliteration": {
+                        "type": "string",
+                        "title": "Transliteration"
+                    },
+                    "pronunciation": {
+                        "type": "string",
+                        "title": "Pronunciation"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "english",
+                    "target_language_script",
+                    "transliteration",
+                    "pronunciation"
+                ],
+                "title": "DesiVocabularyItem"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            }
+        }
+    }
+}

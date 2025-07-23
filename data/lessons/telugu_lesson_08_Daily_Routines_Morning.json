@@ -1,0 +1,168 @@
+{
+  "desi_lesson": {
+    "title": "Lesson 1: Daily Routines: Morning",
+    "target_language": "Telugu",
+    "theme": "Daily Routines: Morning",
+    "vocabulary": [
+      {
+        "english": "morning",
+        "target_language_script": "ఉదయం",
+        "transliteration": "udayam",
+        "pronunciation": "u-day-um"
+      },
+      {
+        "english": "to wake up",
+        "target_language_script": "లేవడం",
+        "transliteration": "levadam",
+        "pronunciation": "le-vad-um"
+      },
+      {
+        "english": "to get up",
+        "target_language_script": "లేచేయడం",
+        "transliteration": "lecheeyadam",
+        "pronunciation": "le-chey-ad-um"
+      },
+      {
+        "english": "to brush teeth",
+        "target_language_script": "పళ్ళు తోముకోవడం",
+        "transliteration": "pallu thomukoovadam",
+        "pronunciation": "pal-lu tho-mu-koo-vad-um"
+      },
+      {
+        "english": "to take a bath",
+        "target_language_script": "స్నానం చేయడం",
+        "transliteration": "snaanam cheyadam",
+        "pronunciation": "snaa-nam chey-ad-um"
+      },
+      {
+        "english": "to eat breakfast",
+        "target_language_script": "ఉదయం తినడం",
+        "transliteration": "udayam tinadam",
+        "pronunciation": "u-day-um ti-na-dum"
+      },
+      {
+        "english": "breakfast",
+        "target_language_script": "ఉదయ భోజనం",
+        "transliteration": "udaya bhojanam",
+        "pronunciation": "u-day-a bho-ja-nam"
+      },
+      {
+        "english": "to go to work/school",
+        "target_language_script": "పనికి / పాఠశాలకు వెళ్ళడం",
+        "transliteration": "paniki / paathashalaaku velladam",
+        "pronunciation": "pa-ni-ki / paa-tha-shaa-la-a-ku vel-la-dam"
+      },
+      {
+        "english": "good morning",
+        "target_language_script": "శుభోదయం",
+        "transliteration": "shubhodayam",
+        "pronunciation": "shub-ho-day-am"
+      },
+      {
+        "english": "I",
+        "target_language_script": "నేను",
+        "transliteration": "nenu",
+        "pronunciation": "ne-nu"
+      }
+    ],
+    "example_sentences": [
+      {
+        "english": "Good morning!",
+        "target_language_script": "శుభోదయం!",
+        "transliteration": "shubhodayam!",
+        "pronunciation": "shub-ho-day-am!"
+      },
+      {
+        "english": "I wake up at 6 am.",
+        "target_language_script": "నేను ఉదయం 6 గంటలకు లేస్తాను.",
+        "transliteration": "nenu udayam 6 gantalaaku lestaanu.",
+        "pronunciation": "ne-nu u-day-um 6 gan-ta-la-a-ku le-staa-nu"
+      },
+      {
+        "english": "I eat breakfast.",
+        "target_language_script": "నేను ఉదయం తింటాను.",
+        "transliteration": "nenu udayam tintanu.",
+        "pronunciation": "ne-nu u-day-um tin-taa-nu"
+      },
+      {
+        "english": "I go to work.",
+        "target_language_script": "నేను పనికి వెళ్తాను.",
+        "transliteration": "nenu paniki veltaanu.",
+        "pronunciation": "ne-nu pa-ni-ki vel-taa-nu"
+      },
+      {
+        "english": "I take a bath in the morning.",
+        "target_language_script": "నేను ఉదయం స్నానం చేస్తాను.",
+        "transliteration": "nenu udayam snaanam chestaanu.",
+        "pronunciation": "ne-nu u-day-am snaa-nam ches-taa-nu"
+      }
+    ],
+    "short_story": {
+      "title": "A Typical Morning",
+      "dialogue": [
+        {
+          "speaker": "Person",
+          "target_language_script": "శుభోదయం! నేను లేస్తాను.",
+          "transliteration": "shubhodayam! Nenu lestaanu.",
+          "english": "Good morning! I am getting up."
+        },
+        {
+          "speaker": "Person",
+          "target_language_script": "నేను పళ్ళు తోముకుంటాను.",
+          "transliteration": "nenu pallu thomukuntaanu.",
+          "english": "I am brushing my teeth."
+        },
+        {
+          "speaker": "Person",
+          "target_language_script": "నేను ఉదయం భోజనం తింటాను.",
+          "transliteration": "nenu udayam bhojanam tintanu.",
+          "english": "I am eating breakfast."
+        },
+        {
+          "speaker": "Person",
+          "target_language_script": "నేను పనికి వెళ్తున్నాను.",
+          "transliteration": "nenu paniki velthunnaanu.",
+          "english": "I am going to work."
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "question": "How do you say 'good morning' in Telugu?",
+        "options": [
+          "shubhodayam",
+          "namaste",
+          "udayam"
+        ],
+        "answer": "shubhodayam"
+      },
+      {
+        "question": "How do you say 'I wake up' in Telugu?",
+        "options": [
+          "nenu lestaanu",
+          "nenu tintanu",
+          "nenu veltaanu"
+        ],
+        "answer": "nenu lestaanu"
+      },
+      {
+        "question": "How do you say 'I eat breakfast' in Telugu?",
+        "options": [
+          "nenu udayam tintanu",
+          "nenu snaanam chestaanu",
+          "nenu paniki veltaanu"
+        ],
+        "answer": "nenu udayam tintanu"
+      },
+      {
+        "question": "How do you say 'to take a bath' in Telugu?",
+        "options": [
+          "snaanam cheyadam",
+          "pallu thomukoovadam",
+          "udayam tinadam"
+        ],
+        "answer": "snaanam cheyadam"
+      }
+    ]
+  }
+}

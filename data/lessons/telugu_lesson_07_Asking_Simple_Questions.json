@@ -1,0 +1,172 @@
+{
+  "desi_lesson": {
+    "title": "Lesson 1: Asking Simple Questions in Telugu",
+    "target_language": "Telugu",
+    "theme": "Asking Simple Questions",
+    "vocabulary": [
+      {
+        "english": "hello",
+        "target_language_script": "నమస్కారం",
+        "transliteration": "namaskaaram",
+        "pronunciation": "nuh-muh-skaa-ram"
+      },
+      {
+        "english": "how are you?",
+        "target_language_script": "ఎలా ఉన్నారు?",
+        "transliteration": "ela unnaaru?",
+        "pronunciation": "eh-la uh-naa-roo?"
+      },
+      {
+        "english": "I am fine",
+        "target_language_script": "నేను బాగున్నాను",
+        "transliteration": "nenu baagunnaanu",
+        "pronunciation": "nay-noo bah-gun-naa-noo"
+      },
+      {
+        "english": "thank you",
+        "target_language_script": "ధన్యవాదాలు",
+        "transliteration": "danyavaadaalu",
+        "pronunciation": "dhan-ya-vaa-daalu"
+      },
+      {
+        "english": "what is your name?",
+        "target_language_script": "మీ పేరు ఏమిటి?",
+        "transliteration": "mee peru emiti?",
+        "pronunciation": "mee pay-roo eh-mee-tee?"
+      },
+      {
+        "english": "my name is...",
+        "target_language_script": "నా పేరు...",
+        "transliteration": "naa peru...",
+        "pronunciation": "naa pay-roo..."
+      },
+      {
+        "english": "yes",
+        "target_language_script": "అవును",
+        "transliteration": "avunu",
+        "pronunciation": "ah-vu-noo"
+      },
+      {
+        "english": "no",
+        "target_language_script": "లేదు",
+        "transliteration": "ledu",
+        "pronunciation": "lay-doo"
+      },
+      {
+        "english": "please",
+        "target_language_script": "దయచేసి",
+        "transliteration": "dayachesi",
+        "pronunciation": "day-a-chay-see"
+      },
+      {
+        "english": "excuse me",
+        "target_language_script": "క్షమించండి",
+        "transliteration": "kshaminchandi",
+        "pronunciation": "ksha-min-chan-dee"
+      }
+    ],
+    "example_sentences": [
+      {
+        "english": "Hello, how are you?",
+        "target_language_script": "నమస్కారం, ఎలా ఉన్నారు?",
+        "transliteration": "namaskaaram, ela unnaaru?",
+        "pronunciation": "nuh-muh-skaa-ram, eh-la uh-naa-roo?"
+      },
+      {
+        "english": "I am fine, thank you.",
+        "target_language_script": "నేను బాగున్నాను, ధన్యవాదాలు.",
+        "transliteration": "nenu baagunnaanu, danyavaadaalu.",
+        "pronunciation": "nay-noo bah-gun-naa-noo, dhan-ya-vaa-daalu."
+      },
+      {
+        "english": "What is your name?",
+        "target_language_script": "మీ పేరు ఏమిటి?",
+        "transliteration": "mee peru emiti?",
+        "pronunciation": "mee pay-roo eh-mee-tee?"
+      },
+      {
+        "english": "My name is John.",
+        "target_language_script": "నా పేరు జాన్.",
+        "transliteration": "naa peru Jaan.",
+        "pronunciation": "naa pay-roo Jaan."
+      },
+      {
+        "english": "Please excuse me.",
+        "target_language_script": "క్షమించండి, దయచేసి.",
+        "transliteration": "kshaminchandi, dayachesi.",
+        "pronunciation": "ksha-min-chan-dee, day-a-chay-see."
+      }
+    ],
+    "short_story": {
+      "title": "Meeting a New Person",
+      "dialogue": [
+        {
+          "speaker": "Person A",
+          "target_language_script": "నమస్కారం!",
+          "transliteration": "namaskaaram!",
+          "english": "Hello!"
+        },
+        {
+          "speaker": "Person B",
+          "target_language_script": "నమస్కారం! ఎలా ఉన్నారు?",
+          "transliteration": "namaskaaram! ela unnaaru?",
+          "english": "Hello! How are you?"
+        },
+        {
+          "speaker": "Person A",
+          "target_language_script": "నేను బాగున్నాను, ధన్యవాదాలు. మీ పేరు ఏమిటి?",
+          "transliteration": "nenu baagunnaanu, danyavaadaalu. mee peru emiti?",
+          "english": "I am fine, thank you. What is your name?"
+        },
+        {
+          "speaker": "Person B",
+          "target_language_script": "నా పేరు సీత.",
+          "transliteration": "naa peru Seeta.",
+          "english": "My name is Seeta."
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "question": "How do you say 'how are you?' in Telugu?",
+        "options": [
+          "ela unnaaru?",
+          "namaskaaram",
+          "danyavaadaalu",
+          "avunu"
+        ],
+        "answer": "ela unnaaru?"
+      },
+      {
+        "question": "How do you say 'yes' in Telugu?",
+        "options": [
+          "ledu",
+          "avunu",
+          "namaskaaram",
+          "dayachesi"
+        ],
+        "answer": "avunu"
+      },
+      {
+        "question": "How do you say 'thank you' in Telugu?",
+        "options": [
+          "mee peru emiti?",
+          "ela unnaaru?",
+          "danyavaadaalu",
+          "kshaminchandi"
+        ],
+        "answer": "danyavaadaalu"
+      },
+      {
+        "question": "Translate: \"My name is Ram\" ",
+        "options": [
+          "naa peru Ram",
+          "mee peru Ram?",
+          "nenu Ram",
+          "Ram peru naaku"
+        ],
+        "answer": "naa peru Ram"
+      }
+    ]
+  }
+}

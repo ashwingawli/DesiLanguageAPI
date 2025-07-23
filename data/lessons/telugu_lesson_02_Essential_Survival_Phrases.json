@@ -1,0 +1,166 @@
+{
+  "desi_lesson": {
+    "title": "Lesson 1: Essential Survival Phrases in Telugu",
+    "target_language": "Telugu",
+    "theme": "Essential Survival Phrases",
+    "vocabulary": [
+      {
+        "english": "hello",
+        "target_language_script": "నమస్కారం",
+        "transliteration": "namaskaaram",
+        "pronunciation": "nuh-muh-skaa-rum"
+      },
+      {
+        "english": "goodbye",
+        "target_language_script": "బాయ్",
+        "transliteration": "bay",
+        "pronunciation": "bye"
+      },
+      {
+        "english": "thank you",
+        "target_language_script": "ధన్యవాదాలు",
+        "transliteration": "danyavaadalu",
+        "pronunciation": "dhanyavaad-aalu"
+      },
+      {
+        "english": "yes",
+        "target_language_script": "అవును",
+        "transliteration": "avunu",
+        "pronunciation": "a-vu-nu"
+      },
+      {
+        "english": "no",
+        "target_language_script": "లేదు",
+        "transliteration": "ledu",
+        "pronunciation": "lay-du"
+      },
+      {
+        "english": "please",
+        "target_language_script": "దయచేసి",
+        "transliteration": "dayachesi",
+        "pronunciation": "day-a-che-see"
+      },
+      {
+        "english": "excuse me",
+        "target_language_script": "క్షమించండి",
+        "transliteration": "kshaminchandi",
+        "pronunciation": "ksha-min-chan-dee"
+      },
+      {
+        "english": "I don't understand",
+        "target_language_script": "నేను అర్థం చేసుకోలేదు",
+        "transliteration": "nenu ardham chesukolenu",
+        "pronunciation": "nay-noo ar-tham che-su-ko-lay-noo"
+      },
+      {
+        "english": "help",
+        "target_language_script": "సహాయం",
+        "transliteration": "sahaayam",
+        "pronunciation": "sa-haa-yam"
+      },
+      {
+        "english": "where is the bathroom?",
+        "target_language_script": "స్నానాలయం ఎక్కడ ఉంది?",
+        "transliteration": "snaanalaayam ekkaḍa undi?",
+        "pronunciation": "snaa-naa-la-yaam ek-ka-da un-dee"
+      }
+    ],
+    "example_sentences": [
+      {
+        "english": "Hello, how are you?",
+        "target_language_script": "నమస్కారం, ఎలా ఉన్నారు?",
+        "transliteration": "namaskaaram, ela unnaaru?",
+        "pronunciation": "nuh-muh-skaa-rum, eh-la un-naa-roo"
+      },
+      {
+        "english": "Goodbye, thank you.",
+        "target_language_script": "బాయ్, ధన్యవాదాలు.",
+        "transliteration": "bay, danyavaadalu.",
+        "pronunciation": "bye, dhanyavaad-aalu"
+      },
+      {
+        "english": "Yes, please.",
+        "target_language_script": "అవును, దయచేసి.",
+        "transliteration": "avunu, dayachesi.",
+        "pronunciation": "a-vu-nu, day-a-che-see"
+      },
+      {
+        "english": "Excuse me, where is the bathroom?",
+        "target_language_script": "క్షమించండి, స్నానాలయం ఎక్కడ ఉంది?",
+        "transliteration": "kshaminchandi, snaanalaayam ekkaḍa undi?",
+        "pronunciation": "ksha-min-chan-dee, snaa-naa-la-yaam ek-ka-da un-dee"
+      },
+      {
+        "english": "I don't understand, please help.",
+        "target_language_script": "నేను అర్థం చేసుకోలేదు, దయచేసి సహాయం చేయండి.",
+        "transliteration": "nenu ardham chesukolenu, dayachesi sahaayam cheyandi.",
+        "pronunciation": "nay-noo ar-tham che-su-ko-lay-noo, day-a-che-see sa-haa-yam che-yan-dee"
+      }
+    ],
+    "short_story": {
+      "title": "Lost in the Market",
+      "dialogue": [
+        {
+          "speaker": "Person A",
+          "target_language_script": "క్షమించండి, స్నానాలయం ఎక్కడ ఉంది?",
+          "transliteration": "kshaminchandi, snaanalaayam ekkaḍa undi?",
+          "english": "Excuse me, where is the bathroom?"
+        },
+        {
+          "speaker": "Person B",
+          "target_language_script": "అక్కడ ఉంది.",
+          "transliteration": "akkaḍa undi.",
+          "english": "It's over there."
+        },
+        {
+          "speaker": "Person A",
+          "target_language_script": "ధన్యవాదాలు!",
+          "transliteration": "danyavaadalu!",
+          "english": "Thank you!"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "question": "How do you say 'thank you' in Telugu?",
+        "options": [
+          "namaskaaram",
+          "danyavaadalu",
+          "avunu",
+          "bay"
+        ],
+        "answer": "danyavaadalu"
+      },
+      {
+        "question": "How do you say 'yes' in Telugu?",
+        "options": [
+          "ledu",
+          "avunu",
+          "dayachesi",
+          "kshaminchandi"
+        ],
+        "answer": "avunu"
+      },
+      {
+        "question": "How do you say 'no' in Telugu?",
+        "options": [
+          "avunu",
+          "bay",
+          "ledu",
+          "namaskaaram"
+        ],
+        "answer": "ledu"
+      },
+      {
+        "question": "How do you say 'goodbye' in Telugu?",
+        "options": [
+          "namaskaaram",
+          "danyavaadalu",
+          "avunu",
+          "bay"
+        ],
+        "answer": "bay"
+      }
+    ]
+  }
+}

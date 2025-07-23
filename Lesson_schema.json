@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Language Lesson Schema",
+  "description": "A structured lesson for any target language",
+  "type": "object",
+  "properties": {
+    "lesson": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "pattern": "^Lesson \\d+: .+",
+          "minLength": 1
+        },
+        "target_language": {
+          "type": "string",
+          "minLength": 1
+        },
+        "theme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vocabulary": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "properties": {
+              "english": { "type": "string", "minLength": 1 },
+              "target_language_script": { "type": "string", "minLength": 1 },
+              "transliteration": { "type": "string", "minLength": 1 },
+              "pronunciation": { "type": "string", "minLength": 1 }
+            },
+            "required": ["english", "target_language_script", "transliteration", "pronunciation"],
+            "additionalProperties": false
+          }
+        },
+        "example_sentences": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "properties": {
+              "english": { "type": "string", "minLength": 1 },
+              "target_language_script": { "type": "string", "minLength": 1 },
+              "transliteration": { "type": "string", "minLength": 1 },
+              "pronunciation": { "type": "string", "minLength": 1 }
+            },
+            "required": ["english", "target_language_script", "transliteration", "pronunciation"],
+            "additionalProperties": false
+          }
+        },
+        "short_story": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string", "minLength": 1 },
+            "dialogue": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "speaker": { "type": "string", "minLength": 1 },
+                  "target_language_script": { "type": "string", "minLength": 1 },
+                  "transliteration": { "type": "string", "minLength": 1 },
+                  "english": { "type": "string", "minLength": 1 }
+                },
+                "required": ["speaker", "target_language_script", "transliteration", "english"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["title", "dialogue"],
+          "additionalProperties": false
+        },
+        "quiz": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": { "type": "string", "minLength": 1 },
+              "options": {
+                "type": "array",
+                "minItems": 2,
+                "items": { "type": "string", "minLength": 1 }
+              },
+              "answer": { "type": "string", "minLength": 1 }
+            },
+            "required": ["question", "options", "answer"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["title", "target_language", "theme", "vocabulary", "example_sentences", "short_story", "quiz"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["lesson"],
+  "additionalProperties": false
+}
