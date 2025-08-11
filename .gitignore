@@ -74,9 +74,11 @@ out/
 *.sqlite
 *.sqlite3
 
-# Logs
-logs/
+# Logs and data directories
+data/logs/
 *.log
+nohup.out
+server.log
 
 # Test coverage
 htmlcov/
@@ -90,17 +92,67 @@ coverage.xml
 # Alembic
 alembic/versions/*.pyc
 
-# Temporary files
+# Temporary files  
 *.tmp
 *.temp
 .cache/
-nohup.out
-server.log
+lesson-resources/temp/
 
 # API Keys and Secrets
 *.key
 *.pem
 secrets/
 
-# Frontend applications (keep local, don't push to GitHub)
-frontend/
+# Keep only the main frontend app, exclude others
+frontend/*
+!frontend/replt-app/
+
+# Zone.Identifier files from Windows
+*:Zone.Identifier
+# Build artifacts
+frontend/replt-app/dist/
+frontend/replt-app/node_modules/
+
+# Python virtual environment  
+venv/
+
+# Test results
+data/test-results/
+tests/data/
+
+# Admin and sensitive files
+ADMIN_CREDENTIALS.md
+admin_lesson_access_summary.md
+enhanced_api_fix_summary.md
+frontend_integration_test.md
+test_frontend_lesson_flow.md
+
+# Google Cloud credentials
+config/google_tts.json
+*.json
+!Lesson_schema.json
+!openapi_schema.json
+!package*.json
+!tsconfig*.json
+!components.json
+
+# Audio files
+assets/audio/
+*.mp3
+*.wav
+*.ogg
+*.m4a
+
+# Generated lesson data
+data/lessons/
+lesson-resources/Lessons_upload/loaded/
+lesson-resources/Lessons_upload/failed/
+
+# Development TypeScript file (duplicate of service)
+desi_lesson_generate_GeminiService.ts
+
+# Editor and system files
+.claude/
+*.bak
+*.orig
+*.rej
