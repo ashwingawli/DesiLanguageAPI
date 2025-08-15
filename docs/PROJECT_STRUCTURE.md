@@ -23,8 +23,7 @@ This document outlines the organized structure of the DesiLanguage project.
 │   ├── README_TESTING.md
 │   └── PROJECT_STRUCTURE.md (this file)
 ├── frontend/             # Frontend applications
-│   ├── nextjs-app/       # Next.js frontend application
-│   └── react-app/        # React with Vite frontend application
+│   └── replt-app/        # React frontend application with TTS integration
 ├── scripts/              # Utility and test scripts
 │   ├── test_api_curl.sh
 │   └── test_api_simple.sh
@@ -55,8 +54,7 @@ This document outlines the organized structure of the DesiLanguage project.
 
 ## Frontend Structure (`frontend/`)
 
-- **nextjs-app/**: Next.js-based frontend with TypeScript
-- **react-app/**: React with Vite frontend with TypeScript and TTS integration
+- **replt-app/**: React-based frontend with TypeScript and TTS integration
 
 ## Data Organization (`data/`)
 
@@ -91,6 +89,5 @@ The following directories/files are excluded via `.gitignore`:
 - `.env` - Environment variables with API keys
 - `__pycache__/` - Python bytecode cache
 - `node_modules/` - Node.js dependencies
-- `.next/` - Next.js build cache
 - Database files (*.db, *.sqlite)
 - IDE configuration files

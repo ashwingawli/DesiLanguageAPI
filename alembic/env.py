@@ -7,10 +7,13 @@ import sys
 
 sys.path.append(os.getcwd())
 
-from app.config import settings
-from app.models import Base
+from app.utils.config import settings
+from app.models.models import Base
+
+# PostgreSQL migration configuration - no special environment setup needed
 
 config = context.config
+# Set PostgreSQL database URL
 config.set_main_option("sqlalchemy.url", settings.db_url)
 
 if config.config_file_name is not None:

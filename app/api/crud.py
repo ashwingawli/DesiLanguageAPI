@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session, joinedload
 from app.models import models, schemas
 from typing import List, Optional
 
-def create_desi_lesson(db: Session, lesson_data: schemas.DesiLessonResponse, theme: str = None) -> models.DesiLesson:
+def create_desi_lesson(db: Session, lesson_data: schemas.DesiLessonResponse, difficulty: str = None) -> models.DesiLesson:
     lesson_content = lesson_data.desi_lesson
     
     # Calculate the next lesson number for this language
@@ -12,16 +12,16 @@ def create_desi_lesson(db: Session, lesson_data: schemas.DesiLessonResponse, the
     
     lesson_number = (max_lesson.lesson_number + 1) if max_lesson else 1
     
-    # Create proper title with lesson number
-    lesson_title = f"Lesson {lesson_number}: {lesson_content.title}"
+    # Use the original title from the lesson content
+    lesson_title = lesson_content.title
     
-    # Use provided theme or fall back to lesson theme
-    final_theme = theme or lesson_content.theme
+    # Use provided difficulty or fall back to lesson difficulty
+    final_difficulty = difficulty or lesson_content.difficulty
     
     db_lesson = models.DesiLesson(
         title=lesson_title,
         target_language=lesson_content.target_language,
-        theme=final_theme,
+        difficulty=final_difficulty,
         lesson_number=lesson_number
     )
     db.add(db_lesson)
@@ -61,15 +61,16 @@ def create_desi_lesson(db: Session, lesson_data: schemas.DesiLessonResponse, the
             target_language_script=dialogue_item.target_language_script,
             transliteration=dialogue_item.transliteration,
             english=dialogue_item.english,
-            order=i
+            order_num=i
         )
         db.add(db_dialogue)
     
     for quiz_item in lesson_content.quiz:
+        # PostgreSQL JSONB handles Python objects natively - no need for json.dumps
         db_quiz = models.DesiQuizQuestion(
             lesson_id=db_lesson.id,
             question=quiz_item.question,
-            options=quiz_item.options,
+            options=quiz_item.options,  # PostgreSQL JSONB handles list objects directly
             answer=quiz_item.answer
         )
         db.add(db_quiz)
@@ -86,6 +87,18 @@ def get_desi_lessons(db: Session, skip: int = 0, limit: int = 100) -> List[model
 
 def get_desi_lessons_by_language(db: Session, target_language: str) -> List[models.DesiLesson]:
     return db.query(models.DesiLesson).filter(models.DesiLesson.target_language == target_language).all()
+
+def get_desi_lesson_by_language_and_number(db: Session, target_language: str, lesson_number: int) -> Optional[models.DesiLesson]:
+    """Get lesson by language and lesson number with all related content"""
+    return db.query(models.DesiLesson).filter(
+        models.DesiLesson.target_language == target_language,
+        models.DesiLesson.lesson_number == lesson_number
+    ).options(
+        joinedload(models.DesiLesson.vocabulary),
+        joinedload(models.DesiLesson.example_sentences),
+        joinedload(models.DesiLesson.short_story).joinedload(models.DesiShortStory.dialogue),
+        joinedload(models.DesiLesson.quiz_questions)
+    ).first()
 
 def get_desi_lesson_with_content(db: Session, lesson_id: int) -> Optional[models.DesiLesson]:
     """Get lesson with all related content (vocabulary, examples, story, quiz)"""
@@ -145,7 +158,7 @@ def convert_db_lesson_to_response_format(db_lesson: models.DesiLesson) -> schema
                 transliteration=d.transliteration,
                 english=d.english
             )
-            for d in sorted(db_lesson.short_story.dialogue, key=lambda x: x.order)
+            for d in sorted(db_lesson.short_story.dialogue, key=lambda x: x.order_num)
         ]
     
     short_story = schemas.DesiShortStory(
@@ -167,7 +180,7 @@ def convert_db_lesson_to_response_format(db_lesson: models.DesiLesson) -> schema
     lesson_content = schemas.DesiLessonContent(
         title=db_lesson.title,
         target_language=db_lesson.target_language,
-        theme=db_lesson.theme,
+        difficulty=db_lesson.difficulty,
         vocabulary=vocabulary,
         example_sentences=example_sentences,
         short_story=short_story,

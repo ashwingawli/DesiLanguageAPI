@@ -5,7 +5,22 @@
       "Bash(mkdir:*)",
       "Bash(mv:*)",
       "Bash(cp:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npx create-next-app:*)",
+      "Bash(npx prisma db push:*)",
+      "Bash(npx tsx:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(python tests/test_random_lesson_endpoint.py)",
+      "Bash(alembic revision:*)",
+      "Bash(alembic -c config/alembic.ini revision --autogenerate -m \"Add user management tables\")",
+      "Bash(alembic:*)",
+      "Bash(python:*)",
+      "Bash(curl:*)",
+      "Bash(ss:*)",
+      "Bash(pkill:*)",
+      "Bash(chmod:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }
